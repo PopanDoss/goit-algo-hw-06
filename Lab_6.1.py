@@ -7,14 +7,14 @@ class Field:
 
     def __str__(self):
         return str(self.value)
-#
+
 class Name(Field):
     def __init__(self, value):
         if len(value) != 0:
             super().__init__(value)
         else :
             raise ValueError ("Incorrect Name")
-#
+
 class Phone(Field):
     def __init__(self, value):
         if  len(value) == 10:
@@ -45,9 +45,6 @@ class Record:
         for ph in self.phones:
             if ph.value == phone :
                 return ph.value
-                 
-    def getRecord (self):
-        return self.name.value, self.phones
 
     def __str__(self):
         return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}"
